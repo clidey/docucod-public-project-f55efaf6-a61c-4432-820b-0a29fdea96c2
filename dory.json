@@ -1,0 +1,68 @@
+{
+  "background": {
+    "decoration": "gradient"
+  },
+  "colors": {
+    "dark": "#1E3A8A",
+    "light": "#60A5FA",
+    "primary": "#60A5FA"
+  },
+  "favicon": "/favicon.svg",
+  "fonts": {
+    "family": "Montserrat",
+    "format": "woff2",
+    "source": "https://fonts.gstatic.com/s/googlesansflex/v5/t5sJIQcYNIWbFgDgAAzZ34auoVyXkJCOvp3SFWJbN5hF8Ju1x6sKCyp0l9sI40swNJwGpVd4AZzz0v6lJ4qFXNZhGjLvDSkV4USKMo6qQzwliVdHAy9jxTDHg_ugnAakpwGc-cxgUqDCIUI.woff2"
+  },
+  "icons": {
+    "library": "fontawesome"
+  },
+  "logo": {
+    "dark": "./logo/logo.svg",
+    "light": "./logo/logo.svg"
+  },
+  "name": "LearnXinYMinutesUnofficialAndroid",
+  "navigation": {
+    "tabs": [
+      {
+        "groups": [
+          {
+            "group": "Introduction \u0026 Value",
+            "pages": [
+              "overview/introduction-and-value/product-introduction",
+              "overview/introduction-and-value/audience-and-use-cases",
+              "overview/introduction-and-value/feature-glance"
+            ]
+          },
+          {
+            "group": "System Architecture \u0026 Core Concepts",
+            "pages": [
+              "overview/system-architecture-and-concepts/architecture-diagram",
+              "overview/system-architecture-and-concepts/core-concepts-and-terminology",
+              "overview/system-architecture-and-concepts/integration-and-permissions"
+            ]
+          }
+        ],
+        "tab": "Overview"
+      },
+      {
+        "groups": [
+          {
+            "group": "Setup \u0026 Installation",
+            "pages": [
+              "getting-started/setup-installation/prerequisites-requirements",
+              "getting-started/setup-installation/installation-instructions",
+              "getting-started/setup-installation/configuration-setup",
+              "getting-started/setup-installation/first-run-validation",
+              "getting-started/setup-installation/troubleshooting-common-issues"
+            ]
+          }
+        ],
+        "tab": "Getting Started"
+      }
+    ]
+  },
+  "styling": {
+    "codeblocks": "dark",
+    "eyebrows": "breadcrumbs"
+  }
+}
