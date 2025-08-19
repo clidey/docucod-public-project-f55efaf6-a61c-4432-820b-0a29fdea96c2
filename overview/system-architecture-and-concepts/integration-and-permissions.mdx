@@ -1,0 +1,130 @@
+---
+title: "Integrations & Content Attribution"
+description: "Understand how the app integrates with Firebase for backend services, leverages third-party content from the Learn X in Y Minutes site with explicit permission, and adheres to proper attribution practices."
+---
+
+# Integrations & Content Attribution
+
+## Unlocking Seamless Access with Trusted Integrations
+
+The LearnXinYMinutesUnofficialAndroid app brings you a fast, mobile-friendly way to explore programming language references from the beloved Learn X in Y Minutes website. This page reveals how the app connects with powerful backend services and respects the original content creators through explicit attribution and licensing adherence.
+
+### Why Integrations Matter to You
+
+Behind the scenes, this app integrates with Firebase, a robust cloud platform, to fetch, cache, and synchronize programming languages data. This connection enables lightning-fast search and offline availability — so whether you’re on a plane or in a coffee shop, your language refresher is just a tap away.
+
+At the same time, the app honors the original content authors by strictly respecting the Creative Commons license terms, ensuring you receive genuine, unaltered information that creators intend to share.
+
+---
+
+## How the App Integrates with Firebase
+
+### Firebase Firestore: Your Dynamic Language Backend
+
+This app uses Firebase Firestore as its primary backend service:
+
+- **Live Data Fetching:** Firestore stores the comprehensive list of programming languages and their content remotely.
+- **Offline Caching:** The app configures Firestore settings to enable offline persistence, allowing you to browse cached languages even without an active internet connection.
+- **Real-Time Updates:** When you have connectivity, your app automatically syncs with the latest content, ensuring your resources stay current.
+
+### Practical User Experience
+
+1. On launching the app, Firebase fetches the supported languages list.
+2. You search or browse the list instantly, thanks to local caching.
+3. Selecting a language loads its corresponding content fetched dynamically from Firestore.
+
+All of this happens transparently, minimizing waiting times and maximizing your productivity.
+
+<Check>
+The use of Firebase Firestore is configured with persistence enabled for smooth offline support.
+</Check>
+
+---
+
+## Content Attribution & Licensing
+
+### Respecting the Creators and Licensing Terms
+
+- The app uses content sourced directly from the official Learn X in Y Minutes website with explicit permission from the original authors.
+- It strictly follows the [Creative Commons Attribution-ShareAlike 3.0 License (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/), meaning:
+  - You can freely use and share the content.
+  - You must credit the original creators.
+  - Any adapted works must be shared alike.
+
+### How Attribution Appears in the App
+
+- The app’s About section clearly states it is an *unofficial* client of the Learn X in Y Minutes site.
+- It includes direct links to the official website for further exploration and verification.
+- Metadata and app descriptions explicitly credit content authors and list underlying technology like Firebase and third-party libraries.
+
+<Note>
+Providing transparent attribution ensures compliance with licensing, builds trust, and supports the vibrant open content community.
+</Note>
+
+---
+
+## Best Practices for Using the App with These Integrations
+
+- **Keep Internet Connectivity When Possible:** To get the latest updates and synchronize progress.
+- **Use Offline Caching:** Plan ahead by browsing or downloading the languages you intend to study in offline mode.
+- **Explore Attribution Details:** Check the ‘About this app’ section anytime to learn more about content origins and licensing.
+
+---
+
+## Troubleshooting Common Integration Issues
+
+<AccordionGroup title="Common Integration Troubleshooting">
+<Accordion title="Why am I not seeing the latest language content?">
+If the app content is outdated, ensure you have internet access so Firebase can sync new data. Try restarting the app after connecting.
+</Accordion>
+<Accordion title="App crashes or freezes while fetching languages">
+Check your network connection and retry. Persistent issues may be logged via Firebase Crash Reporting and will be addressed in updates.
+</Accordion>
+<Accordion title="Is my usage of the content allowed?">
+Yes, as long as you respect the CC BY-SA 3.0 license and do not modify or redistribute the app content beyond permitted terms.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## Summary
+
+By integrating with Firebase Firestore, the LearnXinYMinutesUnofficialAndroid app delivers responsive, offline-capable access to programming language references. Importantly, it upholds content creators’ rights through clear licensing and attribution following the Creative Commons CC BY-SA 3.0 license. With these trusted integrations, users enjoy seamless, lawful, and transparent access to invaluable learning resources.
+
+---
+
+## Next Steps
+
+Ready to dive in? For setup and configuration details on Firebase and how to get the most from the app’s backend features, visit the [Configuration & Firebase Setup](../getting-started/setup-installation/configuration-setup) documentation. To understand the app's system workflow and architecture, the [System Overview & Architecture](../overview/system-architecture-and-concepts/architecture-diagram) page provides a comprehensive guide.
+
+Check out the [About this app](app/src/main/res/values/strings.xml#about_app) for full legal and attribution statements within the app itself.
+
+---
+
+## Additional Resources
+
+- [Official Learn X in Y Minutes Website](https://learnxinyminutes.com/) - Original source content.
+- [Creative Commons Attribution-ShareAlike 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/) - License details.
+- [GitHub Repository](https://github.com/modelorona/LearnXinYMinutesUnofficalAndroidApp) - Source code and issue tracker.
+
+---
+
+## Relevant Excerpts From Code & Resources
+
+### Firebase Firestore Initialization & Settings
+```java
+FirebaseFirestore db = FirebaseFirestore.getInstance();
+FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+    .setPersistenceEnabled(true)
+    .build();
+db.setFirestoreSettings(settings);
+```
+This snippet shows how the app enables offline data persistence, critical for a smooth user experience.
+
+### Attribution Statement (from app resources)
+```
+"This is an unofficial app for the popular site Learn X in Y minutes.\n\nIt allows for a quick refresh of your favorite language.\n\nIt is released under the CC BY-SA 30 license, same as what the authors' content is licensed by.\n\nThe app has crash reporting as well as analytics that are provided by Google Firebase services. This data is strictly for to make sure that any crashes are caught and fixed and to gauge the user interaction.\n\nIt is not sold to anyone or exposed to anyone."
+```
+This clear and concise message declares the app’s unofficial status, licensing adherence, and privacy commitments.
+
+---
