@@ -1,0 +1,122 @@
+---
+title: "Core Concepts & Terminology"
+description: "Clarify the essential ideas behind the app: programming language cheat sheets, Firebase integration, offline data caching, and simple alert dialogs. Learn how these concepts appear throughout user workflows and their relevance to the app's design."
+---
+
+# Core Concepts & Terminology
+
+Welcome to the Core Concepts & Terminology page for LearnXinYMinutesUnofficialAndroid. Here, you'll gain a foundational understanding of the essential ideas that power the app: from programming language cheat sheets to Firebase integration, offline data caching, and simple alert dialogs. These concepts are embedded throughout your user experience and workflow, making the app both powerful and intuitive.
+
+---
+
+## Understanding the Building Blocks of Learn X in Y Minutes App
+
+### Programming Language Cheat Sheets
+
+At the heart of the app lies its primary content: succinct and practical programming language cheat sheets sourced directly from the [Learn X in Y Minutes](https://learnxinyminutes.com/) website. These cheat sheets distill complex languages into essential snippets that allow you to quickly refresh your skills, making on-the-go learning efficient and straightforward.
+
+**How it impacts you:**
+- Instantly access well-organized, bite-sized learning content.
+- Navigate across dozens of programming languages seamlessly.
+- Rely on original, unmodified content licensed under CC BY-SA 3.0, ensuring authenticity.
+
+### Firebase Integration
+
+The app leverages Firebase Firestore as a backend database service to store, sync, and deliver the cheat sheet data. Firebase also provides an infrastructure for crash reporting and user analytics, which help maintain app reliability and continually improve your experience.
+
+**What this means for your use:**
+- Real-time data fetching of language references ensures you always get the latest content.
+- Firebase enables automatic offline data persistence, caching your favorite languages for uninterrupted access.
+- Simplified, secure data management means fewer delays and faster load times.
+
+### Offline Data Caching
+
+One of the app's standout features is seamless offline access. Thanks to Firebase's built-in persistence setting enabled in both main and detail activities, data you have previously viewed is stored locally on your device.
+
+**Benefits you receive:**
+- Browse programming languages without an internet connection once cached.
+- Reduce network usage and enjoy faster loading times.
+- Avoid frustration caused by spotty or unavailable connectivity.
+
+### Simple Alert Dialogs
+
+Throughout your interaction with the app, simple alert dialogs provide clear communication for status, errors, or confirmations. These dialogs are designed to keep you informed without interrupting your workflow.
+
+**Why this matters:**
+- Helps convey important information quickly and unobtrusively.
+- Guides you during critical points like data loading or unexpected issues.
+- Enhances usability by keeping feedback straightforward and accessible.
+
+---
+
+## How Core Concepts Fit in Your Workflow
+
+Here's how these ideas weave together in typical user actions:
+
+- **Browsing Languages:** The app displays a scrollable list of available languages fetched from Firebase’s Firestore. Offline caching ensures that if you have viewed a language before, it instantly loads even without network connectivity.
+- **Searching Effectively:** The integrated search bar filters languages dynamically, making it easy to find your desired cheat sheet.
+- **Viewing Language Details:** Selecting a language opens a detailed view where the original HTML content is rendered in a WebView. This leverages Firebase’s data storage and offline caching, so content loads smoothly.
+- **App Stability and Feedback:** Crash reporting and analytics work quietly in the background via Firebase, and any necessary alerts let you know about important events or errors.
+
+---
+
+## Best Practices and Tips
+
+- **Connect to the Internet on First Use:** To ensure all language cheat sheets are downloaded and cached properly, open the app with internet access initially.
+- **Use Search to Quickly Find Languages:** The search bar is case-insensitive and filters results as you type, saving time.
+- **Rely on Offline Mode:** Once you've accessed languages at least once, you can revisit them anytime without internet worries.
+- **Trust the Alerts:** If you see an alert dialog, read it carefully as it helps keep your app use smooth and informed.
+
+---
+
+## Common Pitfalls and Troubleshooting
+
+- **Language List Fails to Load:** Usually related to network issues or Firebase connectivity. Try switching to Wi-Fi or checking your data connection. The app caches what it can, but a first-time load needs internet.
+- **Search Returns No Results:** Ensure you typed the language name correctly. The filter is dynamic but requires accurate substring input.
+- **Content Appears Blank in Detail View:** This might indicate the HTML content failed to load from Firebase. Retry with an active internet connection.
+- **App Crashes or Freezes:** Firebase crash reporting helps catch such issues. Restarting the app or clearing cache may help. Report issues on the GitHub repository if problems persist.
+
+---
+
+## Summary Diagram: How Core Concepts Interact
+
+```mermaid
+flowchart TD
+
+  User["User"] -->|Launches App| MainActivity["MainActivity (Language List)"]
+  MainActivity -->|Fetch language list| FirestoreDB[("Firebase Firestore")]
+  FirestoreDB -->|Data cached locally| OfflineCache["Offline Cache"]
+  MainActivity -->|User search/filter| SearchBar["Search Bar"]
+  User -->|Selects Language| ScrollingActivity["ScrollingActivity (Detail View)"]
+  ScrollingActivity -->|Fetch content HTML| FirestoreDB
+  ScrollingActivity -->|Uses cached data if offline| OfflineCache
+  MainActivity -->|Shows alerts/errors| AlertDialogs["Simple Alert Dialogs"]
+  ScrollingActivity --> AlertDialogs
+  FirestoreDB -->|Crash reports & analytics| FirebaseServices["Firebase Services"]
+
+  classDef db fill:#ddeeff,stroke:#3399ff,stroke-width:2px
+  class FirestoreDB,FirebaseServices db
+
+  classDef user fill:#ddffdd,stroke:#33aa33,stroke-width:2px
+  class User
+
+  classDef ui fill:#ffffcc,stroke:#999900,stroke-width:2px
+  class MainActivity,ScrollingActivity,SearchBar,AlertDialogs,OfflineCache ui
+
+```
+
+---
+
+## Next Steps
+
+Ready to dive deeper? Explore how these core concepts fit within the broader system by visiting:
+
+- [System Overview & Architecture](/overview/system-architecture-and-concepts/architecture-diagram) — Understand how activities and Firebase interact at a system level.
+- [Getting Started Guide](/getting-started/setup-installation/prerequisites-requirements) — Prepare your environment for setup.
+- [Feature Glance](/overview/introduction-and-value/feature-glance) — See these concepts in action through app features.
+
+Together, these resources ensure a sturdy grasp of both foundational theory and practical usage of the LearnXinYMinutesUnofficialAndroid app.
+
+---
+
+*Thank you for investing your time to understand the core concepts and terminology. This knowledge empowers you to maximize the app's value and navigate it confidently.*

@@ -1,0 +1,142 @@
+---
+title: "Prerequisites & System Requirements"
+description: "Learn what you need to get started: Android Studio version, compatible OS platforms, and essential dependencies for running the LearnXinYMinutesUnofficialAndroid app. Details cover necessary Android SDKs and typical developer environment setups."
+---
+
+# Prerequisites & System Requirements
+
+Welcome to the first step in setting up your development environment for the LearnXinYMinutesUnofficialAndroid app. This page outlines everything you need to prepare before installing and running the app—from essential software versions and system compatibility to critical Android SDK dependencies and environment setup tips.
+
+---
+
+## 1. Supported Operating Systems
+
+The app development and testing are optimized for the following OS platforms:
+
+- **Windows 10 or later**
+- **macOS 10.14 (Mojave) or later**
+- **Linux distributions** with Android Studio support (Ubuntu, Fedora, etc.)
+
+Ensure your machine runs a supported OS to avoid compatibility issues with Android Studio and the Android SDK tools.
+
+
+## 2. Android Studio Version
+
+To build and run the LearnXinYMinutesUnofficialAndroid app, install **Android Studio 4.1 or later**. This IDE contains all the necessary tools including:
+
+- Android SDK Manager
+- Emulator and device management
+- Build system (Gradle)
+
+### Installation Tips
+
+- Download Android Studio from the official website: [https://developer.android.com/studio](https://developer.android.com/studio).
+- During setup, select the "Standard" installation to ensure recommended SDK packages are installed.
+
+## 3. Android SDK Requirements
+
+For this app, you must have the following Android SDK components installed:
+
+- **Android SDK Platform-Tools:** Command line tools for development and debugging.
+- **Android SDK Build-Tools version 29.0.3 or higher:** To build and compile the app.
+- **Android SDK Platform version 29 (Android 10.0) or higher:** Target platform for your app.
+
+### How to Confirm and Install SDKs
+
+1. Open Android Studio.
+2. Go to `Tools` > `SDK Manager`.
+3. In the "SDK Platforms" tab, ensure Android 10.0 (API 29) or higher is checked.
+4. In the "SDK Tools" tab, verify that Platform-Tools and Build-Tools 29.0.3 or higher are installed.
+
+## 4. Java Development Kit (JDK)
+
+Android Studio bundles an OpenJDK compatible with the required build tools. You do not need to install a separate JDK.
+
+However, if you prefer a separate installation:
+
+- Install **JDK 8 or 11**
+- Configure Android Studio to use the installed JDK via `File` > `Project Structure` > `SDK Location`
+
+## 5. System Hardware Recommendations
+
+To smoothly run Android Studio and the app emulator:
+
+- **CPU:** Quad-core processor or better
+- **RAM:** Minimum 8 GB (16 GB recommended)
+- **Disk Space:** At least 4 GB free for Android Studio and SDK components
+
+## 6. Device or Emulator
+
+You can run and test the app on:
+
+- A **physical Android device** with Android 6.0 (Marshmallow) or later.
+   - Developer options and USB debugging must be enabled.
+
+- **Android Emulator** set up through Android Studio:
+   - Create a new virtual device with Android 10.0 or later
+
+## 7. Network & Permissions
+
+- The app requires **internet access permission** to fetch content dynamically from Firebase Firestore.
+- Ensure your development machine or device has internet connectivity.
+
+## 8. Additional Dependencies
+
+The app leverages several libraries included in the project Gradle files, which are automatically resolved during the build:
+
+- Firebase Firestore SDK for dynamic data fetching and offline caching.
+- MaterialTextField for enhanced UI search functionality.
+- AboutLibraries for the About screen.
+
+No manual installation required for these dependencies.
+
+---
+
+## Summary Checklist Before Proceeding
+
+<Check>
+- Running supported OS (Windows, macOS, or Linux)
+- Installed Android Studio 4.1 or later
+- Confirmed SDK Platform 29+ and Build Tools 29.0.3+ are installed
+- Java Development Kit setup handled by Android Studio
+- Device or emulator ready with suitable Android version (6.0+)
+- Internet connectivity is available
+</Check>
+
+## Troubleshooting Common Setup Issues
+
+<AccordionGroup title="Common Setup Problems and Solutions">
+<Accordion title="Android Studio Not Detecting SDKs">
+If Android Studio cannot find the SDK,:
+- Verify SDK path under `File` > `Project Structure` > `SDK Location`.
+- Reinstall SDK components via SDK Manager.
+- Delete and recreate emulator devices if they fail to start.
+</Accordion>
+
+<Accordion title="App Build Fails Due to Missing Dependencies">
+- Ensure you have a stable internet connection during the first build to download dependencies.
+- Invalidate caches and restart Android Studio via `File` > `Invalidate Caches / Restart`.
+- Check `gradle.properties` for JVM argument settings; increase memory if needed.
+</Accordion>
+
+<Accordion title="Physical Device Not Recognized">
+- Enable USB debugging in device Developer Options.
+- Confirm proper USB drivers are installed (especially on Windows).
+- Allow device authorization prompt when connected.
+- Use `adb devices` command in terminal to confirm device connectivity.
+</Accordion>
+</AccordionGroup>
+
+---
+
+By completing these prerequisite steps, you ensure a smooth path to installing the LearnXinYMinutesUnofficialAndroid app. Next, proceed to the **Installing the App** guide to set up your development environment for building and running the application.
+
+---
+
+For further insights on app architecture and dynamic data handling using Firebase Firestore, see the [Core Concepts & Terminology](../../overview/system-architecture-and-concepts/core-concepts-and-terminology) page.
+
+# Related Documentation
+- [Installing the App](../installation-instructions)
+- [Configuration & Firebase Setup](../configuration-setup)
+- [First Run & Validation](../first-run-validation)
+- [Troubleshooting Common Issues](../troubleshooting-common-issues)
