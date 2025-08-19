@@ -1,0 +1,165 @@
+---
+title: "Installing the App"
+description: "Walk through the process of acquiring the project—from Play Store installation to cloning the repository for local development. Includes steps to open the project in Android Studio, sync dependencies, and prepare your environment for the first run."
+---
+
+# Installing the App
+
+This guide walks you through acquiring and preparing the LearnXinYMinutesUnofficialAndroid app for both casual use via the Play Store and local development by cloning the source code. It covers installing the app on a device, cloning the repository for development, opening it in Android Studio, syncing dependencies, and preparing your environment for the first run.
+
+---
+
+## 1. Installing from the Play Store
+
+If you want to simply use the Learn X in Y Minutes app without development, follow these steps:
+
+1. Open the Google Play Store app on your Android device.
+2. Search for **Learn X in Y Minutes** or directly visit the app page here:
+   [Learn X in Y Minutes on Play Store](https://play.google.com/store/apps/details?id=com.ah.xiny3)
+3. Tap **Install** and wait for the installation to complete.
+4. Once installed, open the app to start exploring programming language cheat sheets on the go.
+
+This method is the quickest way to access the app with no setup required beyond your device compatibility.
+
+---
+
+## 2. Cloning the Repository for Local Development
+
+To explore, modify, or build the app yourself, you need to clone the GitHub repository and set up the development environment.
+
+### Step 1: Clone the Repository
+
+1. Ensure you have Git installed. Confirm by running in your terminal:
+
+   ```bash
+   git --version
+   ```
+
+2. Navigate to your desired directory for the project.
+3. Clone the repository using this command:
+
+   ```bash
+   git clone https://github.com/modelorona/LearnXinYMinutesUnofficalAndroidApp.git
+   ```
+
+4. Change into the project folder:
+
+   ```bash
+   cd LearnXinYMinutesUnofficalAndroidApp
+   ```
+
+<Tip>
+Make sure you have stable internet connectivity as the cloning process downloads the full history and project files.
+</Tip>
+
+### Step 2: Open the Project in Android Studio
+
+1. Open **Android Studio** (preferably version 4.0 or later).
+2. On the welcome screen, choose **Open an Existing Project**.
+3. Browse to the cloned `LearnXinYMinutesUnofficalAndroidApp` folder and select it.
+4. Android Studio will load the project and prompt to sync Gradle.
+
+### Step 3: Sync Project and Download Dependencies
+
+1. When prompted, click **Sync Now** to download dependencies and set up the environment.
+2. Wait for Gradle to finish syncing successfully. This may take a few minutes on first run.
+
+<Note>
+If the sync fails, ensure you have an active internet connection and a compatible JDK (Java Development Kit) installed.
+</Note>
+
+### Step 4: Verify SDK and Build Tools
+
+1. Open **File > Project Structure > SDK Location** and ensure the Android SDK path is correctly set.
+2. Confirm you have installed Android SDK Platform 28 or higher and Build Tools matching or exceeding version 28.
+3. If necessary, download these components via the SDK Manager inside Android Studio.
+
+<Tip>
+Using the latest stable Android Studio and SDK versions reduces compatibility issues.
+</Tip>
+
+---
+
+## 3. Preparing Your Environment for the First Run
+
+Before running the app locally, follow these steps:
+
+1. Connect a physical Android device with developer mode enabled, or set up an Android Virtual Device (AVD) emulator.
+2. Ensure USB debugging is enabled on your device if using a physical device.
+3. Select your target device or emulator in the Android Studio toolbar.
+
+---
+
+## 4. Running Your First Build
+
+1. In Android Studio, click the **Run** button (green play icon) or use the shortcut `Shift + F10`.
+2. Wait for the build to complete and the app to deploy to your device or emulator.
+3. Once installed, the app will launch automatically.
+
+<Check>
+A successful run should display the main language list screen where you can search and browse programming languages.
+</Check>
+
+---
+
+## 5. Additional Tips and Best Practices
+
+- **Keep Your Environment Updated:** Regularly update Android Studio and SDK tools.
+- **Use Firebase Credentials:** The app depends on Firebase Firestore, which is already configured. No additional setup is required for default usage.
+- **Build Variants:** The project currently supports a single build variant.
+
+---
+
+## 6. Troubleshooting Common Setup Issues
+
+<AccordionGroup title="Troubleshooting Setup Issues">
+<Accordion title="Gradle Sync Fails or Freezes">
+- Ensure your internet connection is stable.
+- Invalidate caches via **File > Invalidate Caches / Restart** in Android Studio.
+- Check for proxy or firewall blocking Gradle.
+- Delete the `.gradle` and `build` folders and sync again.
+</Accordion>
+
+<Accordion title="Android SDK Not Found or Incompatible">
+- Open SDK Manager and install the recommended SDK versions.
+- Update Android Studio to the latest stable release.
+</Accordion>
+
+<Accordion title="App Fails to Run on Device">
+- Verify USB debugging is enabled for physical devices.
+- Make sure the target SDK is compatible with your Android device version.
+- Restart ADB server:
+
+  ```bash
+  adb kill-server
+  adb start-server
+  ```
+</Accordion>
+</AccordionGroup>
+
+---
+
+## 7. Next Steps
+
+After installing and running the app, consider the following:
+
+- Explore [Configuration & Firebase Setup](/getting-started/setup-installation/configuration-setup) to customize and understand backend setup.
+- Review [First Run & Validation](/getting-started/setup-installation/first-run-validation) to verify everything is functioning as expected.
+- Visit the [Troubleshooting Common Issues](/getting-started/setup-installation/troubleshooting-common-issues) for in-depth problem solving.
+
+This completes your initial setup journey, enabling both immediate mobile app use and local development exploration.
+
+---
+
+## Useful Links
+
+- [GitHub Repository](https://github.com/modelorona/LearnXinYMinutesUnofficalAndroidApp)
+- [Play Store App](https://play.google.com/store/apps/details?id=com.ah.xiny3)
+- [Getting Started - Prerequisites & System Requirements](/getting-started/setup-installation/prerequisites-requirements)
+- [Configuration & Firebase Setup](/getting-started/setup-installation/configuration-setup)
+- [First Run & Validation](/getting-started/setup-installation/first-run-validation)
+- [Troubleshooting Common Issues](/getting-started/setup-installation/troubleshooting-common-issues)
+
+---
+
+By following this guide, you will have successfully installed the LearnXinYMinutesUnofficialAndroid app either for everyday use or as a foundation to develop and customize the app locally.
